@@ -31,7 +31,7 @@ public class CustomerDO {
 	/**
 	 * Customer's score
 	 */
-	private int score;
+	private String score;
 
     public CustomerDO() {
     }
@@ -102,14 +102,14 @@ public class CustomerDO {
 	/**
 	 * @return the score
 	 */
-	public int getScore() {
+	public String getScore() {
 		return score;
 	}
 
 	/**
 	 * @param score the score to set
 	 */
-	public void setScore(int score) {
+	public void setScore(String score) {
 		this.score = score;
 	}
 
