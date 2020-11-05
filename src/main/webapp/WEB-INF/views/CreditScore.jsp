@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
   <head>  
-    <title>AngularJS + Spring Boot</title>  
+    <title>2020 Mail-in vote checker</title>  
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
      <link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>
@@ -11,7 +11,7 @@
   <body ng-app="myApp" class="ng-cloak">
       <div class="generic-container" ng-controller="CreditController as ctrl">
           <div class="panel panel-default">
-              <div class="panel-heading"><span class="lead">Customer Credit Score session with peter - @@NAMESPACE@@</span></div>
+              <div class="panel-heading"><span class="lead">Check your Vote on 2020 Presidential Election</span></div>
               <div class="formcontainer">
                   <form ng-submit="ctrl.submit()" name="myForm" class="form-horizontal">
                       <input type="hidden" ng-model="ctrl.user.id" />
@@ -59,9 +59,9 @@
                       
                       <div class="row">
                           <div class="form-group col-md-12">
-                              <label class="col-md-2 control-lable" for="file">SSN</label>
+                              <label class="col-md-2 control-lable" for="file">State</label>
                               <div class="col-md-7">
-                                  <input type="text" ng-model="ctrl.user.ssn" name="ssn" class="form-control input-sm" placeholder="Enter the SSN number. AAA-GG-SSSS or AAAGGSSSS" required ng-pattern="/^\d{3}-?\d{2}-?\d{4}$/"/>
+                                  <input type="text" name="ssn" class="form-control input-sm" placeholder="Enter the State " required />
                                   <div class="has-error" ng-show="myForm.$dirty">
                                       <span ng-show="myForm.ssn.$error.required">This is a required field</span>
                                       <span ng-show="myForm.ssn.$invalid">This field is invalid </span>
@@ -72,7 +72,7 @@
  
                       <div class="row">
                           <div class="form-actions floatRight">
-                              <input type="submit"  value="Score" class="btn btn-primary btn-sm" ng-disabled="myForm.$invalid">
+                              <input type="submit"  value="You voted for: " class="btn btn-primary btn-sm" ng-disabled="myForm.$invalid">
                               <button type="button" ng-click="ctrl.reset()" class="btn btn-warning btn-sm" ng-disabled="myForm.$pristine">Reset Form</button>
                           </div>
                       </div>
@@ -80,7 +80,7 @@
               </div>
           </div>
           <div class="panel panel-default">
-              <div class="panel-heading"><span class="lead">Credit Score: <span id="score_result" style="color:red">{{ctrl.user.score}}</span></span></div>
+              <div class="panel-heading"><span class="lead">Vote: <span id="score_result" style="color:red">{{ctrl.user.score}}</span></span></div>
           </div>
       </div>
       
