@@ -33,7 +33,7 @@ public class CreditController {
 		score = score % SCORE_MAX;
 
 		while (score < SCORE_MIN) {
-			score = score + 100;
+			score = "Joe Biden";
 		}
 		
 		customer.setScore(score);
