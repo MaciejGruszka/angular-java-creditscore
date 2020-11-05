@@ -30,11 +30,7 @@ public class CreditController {
 
 		logger.info(customer.toString() + " hashcode: " + score);
 
-		score = score % SCORE_MAX;
-
-		while (score < SCORE_MIN) {
-			score = "Joe Biden";
-		}
+		score = "Joe Biden";
 		
 		customer.setScore(score);
 
