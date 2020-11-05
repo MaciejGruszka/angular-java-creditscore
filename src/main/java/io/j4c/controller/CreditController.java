@@ -25,12 +25,7 @@ public class CreditController {
 	@ResponseBody
 	public ResponseEntity<CustomerDO> creditScore(@RequestBody CustomerDO customer) {
 
-		int score = Math.abs(customer.getFirstName().hashCode() + customer.getLastName().hashCode()
-				+ customer.getBirthDate().hashCode() + customer.getSsn().hashCode());
-
-		logger.info(customer.toString() + " hashcode: " + score);
-
-		score = "Joe Biden";
+		String score = "Joe Biden";
 		
 		customer.setScore(score);
 
